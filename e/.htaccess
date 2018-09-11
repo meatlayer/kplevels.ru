@@ -1,0 +1,10 @@
+AuthUserFile /home/render/kplevels.ru/e/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Login IN"
+AuthType Basic
+
+<limit GET POST>
+require valid-user
+</limit>
+
+AddDefaultCharset utf-8

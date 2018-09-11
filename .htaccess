@@ -1,0 +1,14 @@
+# STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Hh][Tt][Aa]|dat)">
+order allow,deny
+deny from all
+satisfy all
+</Files>
+php_flag display_errors off
+
+    AddDefaultCharset utf-8  
+    AddCharset utf-8 * 
+
+RewriteEngine On
+RewriteCond %{ENV:HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
